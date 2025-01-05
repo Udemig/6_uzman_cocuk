@@ -1,0 +1,163 @@
+@charset "UTF-8";
+.title {
+  background-color: tomato;
+  color: white;
+  padding: 20px;
+  font-size: 50px;
+}
+
+/*
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: cadetblue;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+header .logo {
+  width: 100px;
+}
+
+
+header .logo img {
+  width: 100%;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+
+
+header nav a:hover {
+  color: lightsalmon;
+  cursor: pointer;
+}
+
+header button {
+  border: none;
+  outline: none;
+  padding: 6px 8px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+header #login-btn {
+  background-color: aquamarine;
+}
+
+header #thema-btn {
+  background-color: darkgoldenrod;
+  color: #ffff;
+}
+
+  */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: cadetblue;
+  padding: 20px;
+  margin-top: 20px;
+}
+header .logo {
+  width: 100px;
+}
+header .logo img {
+  width: 100%;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+header nav a:hover {
+  color: lightsalmon;
+  cursor: pointer;
+}
+header button {
+  border: none;
+  outline: none;
+  padding: 6px 8px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+header #login-btn {
+  background-color: aquamarine;
+}
+header #thema-btn {
+  background-color: darkgoldenrod;
+  color: white;
+}
+
+.flex-classı, .kapsayıcı-2, .kapsayıcı-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kapsayıcı-1 {
+  background-color: brown;
+  margin: 50px 0 50px;
+}
+
+.kapsayıcı-2 {
+  background-color: deeppink;
+  margin: 50px 0 50px;
+}
+
+.image-1 {
+  width: 700px;
+  height: 900px;
+  border-radius: 40px;
+}
+@media (max-width: 1000px) {
+  .image-1 {
+    width: 100px;
+    height: 200px;
+  }
+}
+@media (max-width: 800px) {
+  .image-1 {
+    width: 500px;
+    height: 600px;
+  }
+}
+
+.container {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.container-1 {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: red;
+  background-color: beige;
+}
+
+.container-2 {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: red;
+}/*# sourceMappingURL=style.css.map */

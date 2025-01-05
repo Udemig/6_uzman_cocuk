@@ -1,0 +1,204 @@
+// Scss css'in sahip olduğu özelliklerin yanından içerisinde bulunan bazı özellikler sebebiyle orta ve ileri seviye projelerde çokça kullanılan bir işaretleme dilidir.
+
+// Bu özelliklere birlikte bakalım:
+
+// * 1-) Variables(Değişkenler):
+
+// Scss de değişkenler oluşturarak proje içerisindeki yönetimi çok daha kolay bir şekilde hallederiz.
+
+// Bir değişken oluşturulurken $ işaretinin yanına bir değişken ismi verilir.Bu isimden sonra : konulup sağında bu değişkenin değeri yazılır.Eğer değişken adı birden fazla kelimeden oluşuyorsa bu kelimeleri '-' ile ayırabilir yada 'camelcase' ile yazabilir.
+
+$primary-color: tomato;
+$primary-text-color: #ffff;
+$padding-1: 20px;
+$title-font: 50px;
+.title {
+  background-color: $primary-color;
+  color: $primary-text-color;
+  padding: $padding-1;
+  font-size: $title-font;
+}
+
+// Değişkenler proje içerisinde tekrar tekrar bazı değerleri yazmamızı engeller ve proje içerisindeki bir değişikliği(tema renginin değişmesi) çok daha kolay bir şekilde yapmamızı sağlar.
+
+// * 2-) Nesting Yazım(İç içe yazım):
+
+// Html kısımında oluşturulan elemanların stillendirilmesi noktasında kapsam içerisindeki elemanlara erişirken bu yazım bazen çok uzun olup bizim fazladan kod yazmamıza sebep olur.Bunu engellemek için `scss nesting yazım kullanılır.`
+
+// Nesting yazımda kapsam elemana verilen stillendirme sonrasında bu kapsam içerisindeki elemana verilecek stiller yine kapsam eleman içerisinde yazılabilir.Bunun nasıl yapıldığına bakalım:
+
+// Header Örneği-Css:
+/*
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: cadetblue;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+header .logo {
+  width: 100px;
+}
+
+
+header .logo img {
+  width: 100%;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+
+
+header nav a:hover {
+  color: lightsalmon;
+  cursor: pointer;
+}
+
+header button {
+  border: none;
+  outline: none;
+  padding: 6px 8px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+header #login-btn {
+  background-color: aquamarine;
+}
+
+header #thema-btn {
+  background-color: darkgoldenrod;
+  color: #ffff;
+}
+
+  */
+
+// Header Örneği-Scss:
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: cadetblue;
+  padding: 20px;
+  margin-top: 20px;
+  .logo {
+    width: 100px;
+    img {
+      width: 100%;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      transition: all 0.5s;
+      &:hover {
+        color: lightsalmon;
+        cursor: pointer;
+      }
+    }
+  }
+  button {
+    border: none;
+    outline: none;
+    padding: 6px 8px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+  #login-btn {
+    background-color: aquamarine;
+  }
+  #thema-btn {
+    background-color: darkgoldenrod;
+    color: #ffff;
+  }
+}
+
+// Yukarıdaki örnekte gördüğümüz üzre scss nesting yazımla çok daha az kod yazarak stillendirmeler yapabiliriz.
+
+// * 3-) Miras Alma (Extend):
+
+// Scss'de miras alma yaparak, bazı özellikleri diğer sınıflardan tekrar tekrar yazmayacağız.Bu özellik bizim için ortak yapıları oluşturma noktasında kolaylık sağlayacaktır.
+
+.flex-classı {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kapsayıcı-1 {
+  background-color: brown;
+  margin: 50px 0 50px;
+  @extend .flex-classı;
+}
+
+.kapsayıcı-2 {
+  background-color: deeppink;
+  @extend .flex-classı;
+  margin: 50px 0 50px;
+}
+
+// Yukarıdaki örnekte görüldüğü üzere tekrar tekrar kod yazmak yerine bu kodları bir class altında toplayıp bu classı istenilen yerde extend edebiliriz (miras alabiliriz).Bu sayede daha az kod yazarak aynı stillendirmeyi elde ederiz.
+
+// * 4-) Moduler Scss Dosya Yönetimi:
+
+// Proje stillendirmesinde still kodlarını tek bir dosyada yazmak yerine bunları birden çok dosyaya bölerek daha kolay bir yönetim sağlayabiliriz.Bunu yaparken bir tane ana scss dosyası oluşturulur.Bunun dışındaki dosyalar bu ana scss dosyasında çağırılarak kullanılır.Ana scss dosyası haricindeki diğer dosyalar oluşturulurken dosya adının başına '_' konulur.Bu sayede scss hangi dosya ana scss dosyası hangisi yardımcı scss dosyası  bunu anlamış olur.
+
+// ! Oluşturulan yardımcı  scss dosyaları ana scss dosyasında import edilmelidir.
+
+@import "./variables";
+@import "./mixin";
+
+.image-1 {
+  width: $image-width;
+  height: $image-height;
+  border-radius: $image-radius;
+  @include laptop {
+    width: 100px;
+    height: 200px;
+  }
+  @include tablet {
+    width: 500px;
+    height: 600px;
+  }
+}
+
+// Bu örnekte görüldüğü üzere birden fazla scss dosyası oluştururken oluşturulan scss dosyasını import etmeyi unutmamalı ve yardımcı dosyaların başına '_'  koymalıyız.
+
+// * 5-) Mixin Yapısı:
+
+// Scss mixin yapılarıyla bazı still kodlarını birden çok yerde kullanılabilir kılarız.
+
+// Bir mixin yapısı @mixin (isim) {} şeklinde oluşturulur.{} içerisinde gerekli kodlar yazılır.
+
+// ! Bu özelliği özellikle responsive tasarım yaparken çokça kullanacağız
+
+.container {
+  @include kapsayıcıStil;
+}
+
+.container-1 {
+  @include kapsayıcıStil;
+  background-color: beige;
+}
+.container-2 {
+  @include kapsayıcıStil;
+}
