@@ -71,7 +71,7 @@ header {
 
     // Close Icon
     &__close {
-      //       display: none;
+      display: none;
       @media (max-width: $tablet) {
         display: block;
         position: absolute;
