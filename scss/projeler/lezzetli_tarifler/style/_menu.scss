@@ -1,0 +1,41 @@
+.menu {
+  padding: 5rem 1rem;
+  background-color: $light-gray;
+  h2 {
+    text-align: center;
+    font-family: $secondary-font;
+    margin-bottom: 3rem;
+  }
+  .menu-container {
+    max-width: $container-width;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    .menu-item {
+      background-color: white;
+      padding: 2rem;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+      @include card-hover;
+      &-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        h3 {
+          color: $text-color;
+          font-family: $secondary-font;
+        }
+        .price {
+          color: $primary-color;
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+      }
+      p {
+        color: $dark-gray;
+      }
+    }
+  }
+}
