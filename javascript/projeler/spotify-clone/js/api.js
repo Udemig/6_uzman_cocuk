@@ -6,6 +6,7 @@ const options = {
   },
 };
 
+// Popüler müzikleri api'dan alan fonksiyon
 const getPopular = async () => {
   const url = "https://shazam.p.rapidapi.com/search?term=neffex";
 
@@ -21,4 +22,20 @@ const getPopular = async () => {
   return formattedData;
 };
 
-export { getPopular };
+// Aratılan müziği api'dan alan fonksiyon
+const searchMusic = async (query) => {
+  // Aratılan kelime ile api'a istek at
+  const response = await fetch(
+    `https://shazam.p.rapidapi.com/search?term=${query}`,
+    options
+  );
+
+  // Gelen veriyi js nesnesine çevir
+  const data = await response.json();
+
+  // Gelen veriyi uzun uzun yazmak yerine istenen formata dönüştür
+  const formattedData = data.tracks.hits.map((i) => i.track);
+
+  return formattedData;
+};
+export { getPopular, searchMusic };

@@ -121,6 +121,70 @@ main header nav span {
   color: white;
   padding: 10px;
 }
+main section {
+  flex: 1;
+}
+main section h2 {
+  margin-top: 20px;
+  color: white;
+}
+main section .list {
+  position: relative;
+  margin-top: 20px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+main section .list .card {
+  background-color: #121212;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: rgba(255, 255, 255, 0.78);
+}
+main section .list .card:hover .play {
+  bottom: 20px;
+  opacity: 1;
+}
+main section .list .card:hover .play i {
+  pointer-events: none;
+}
+main section .list .card figure {
+  position: relative;
+}
+main section .list .card figure img {
+  width: 100%;
+  border-radius: 10px;
+}
+main section .list .card figure .play {
+  background-color: #1db954;
+  height: 40px;
+  width: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 23px;
+  position: absolute;
+  right: 10px;
+  bottom: -20px;
+  opacity: 0;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+main section .list .card figure .play:hover {
+  background: #0f6d32;
+  transform: rotate(360deg) scale(1.1);
+}
+main section .list .card .card-info {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 body {
   font-family: "Poppins", serif;
@@ -142,4 +206,81 @@ a {
   display: flex;
   gap: 20px;
   height: calc(100vh - 120px);
+}
+
+/* From Uiverse.io by satyamchaudharydev */
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: -75px;
+}
+
+.spinner span {
+  position: absolute;
+  top: 50%;
+  left: var(--left);
+  width: 35px;
+  height: 7px;
+  background: white;
+  animation: dominos 1s ease infinite;
+  box-shadow: 2px 2px 3px 0px black;
+}
+
+.spinner span:nth-child(1) {
+  --left: 80px;
+  animation-delay: 0.125s;
+}
+
+.spinner span:nth-child(2) {
+  --left: 70px;
+  animation-delay: 0.3s;
+}
+
+.spinner span:nth-child(3) {
+  left: 60px;
+  animation-delay: 0.425s;
+}
+
+.spinner span:nth-child(4) {
+  animation-delay: 0.54s;
+  left: 50px;
+}
+
+.spinner span:nth-child(5) {
+  animation-delay: 0.665s;
+  left: 40px;
+}
+
+.spinner span:nth-child(6) {
+  animation-delay: 0.79s;
+  left: 30px;
+}
+
+.spinner span:nth-child(7) {
+  animation-delay: 0.915s;
+  left: 20px;
+}
+
+.spinner span:nth-child(8) {
+  left: 10px;
+}
+
+@keyframes dominos {
+  50% {
+    opacity: 0.7;
+  }
+  75% {
+    transform: rotate(90deg);
+  }
+  80% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */
