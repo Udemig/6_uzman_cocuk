@@ -2,6 +2,7 @@
 const elements = {
   form: document.querySelector("form"),
   list: document.querySelector(".list"),
+  player: document.querySelector(".player"),
 };
 
 // Cart render eden fonksiyon
@@ -15,6 +16,12 @@ const renderCard = (songs) => {
   songs.forEach((song) => {
     // Bir Html oluştur
     const card = document.createElement("div");
+
+    // Card'a title,subtitle,image,mp3 verilerini ata
+    card.dataset.title = song.title;
+    card.dataset.subtitle = song.subtitle;
+    card.dataset.image = song.images.coverarthq;
+    card.dataset.mp3 = song.hub.actions[1].uri;
 
     // Oluşturulan Html elemanına card classı ekle
     card.classList.add("card");
@@ -59,4 +66,48 @@ const renderLoader = () => {
   `;
 };
 
-export { elements, renderCard, renderLoader };
+const toggleAnimate = () => {
+  // Animasyon eklenecek resime eriş
+  const image = elements.player.querySelector(".info img");
+
+  console.log(image);
+
+  image.classList.toggle("animate");
+};
+
+const renderPlayer = (song) => {
+  elements.player.innerHTML = ` <div class="info">
+       
+        <img
+          src="${song.image}"
+          alt=""
+        />
+    
+        <div>
+          <h5>${song.title}</h5>
+          <p>${song.subtitle}</p>
+        </div>
+      </div>
+
+      <audio
+        src="${song.mp3}"
+        controls autoplay
+      ></audio>
+
+
+
+      <div class="icons">
+        <i class="bi bi-music-note-list"></i>
+        <i class="bi bi-boombox-fill"></i>
+        <i class="bi bi-pc-display"></i>
+      </div>`;
+
+  // Audio elementine eriş
+  const audio = elements.player.querySelector("audio");
+
+  // Şarkının oynatılma ve durdurulma olaylarını izle
+  audio.addEventListener("play", () => toggleAnimate());
+  audio.addEventListener("pause", () => toggleAnimate());
+};
+
+export { elements, renderCard, renderLoader, renderPlayer };

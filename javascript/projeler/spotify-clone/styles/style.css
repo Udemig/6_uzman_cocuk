@@ -186,6 +186,57 @@ main section .list .card .card-info {
   justify-content: space-between;
 }
 
+.player {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.player .info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.player .info img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.player .info div h5 {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+}
+.player .info div p {
+  color: rgb(150, 150, 150);
+}
+.player audio {
+  width: 40%;
+}
+.player .icons {
+  color: white;
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .player .icons {
+    display: none;
+  }
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate {
+  animation: turn 4s infinite linear;
+}
+
 body {
   font-family: "Poppins", serif;
   background-color: black;

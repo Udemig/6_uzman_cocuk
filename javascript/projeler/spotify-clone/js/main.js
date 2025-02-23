@@ -1,5 +1,5 @@
 import { getPopular, searchMusic } from "./api.js";
-import { elements, renderCard, renderLoader } from "./ui.js";
+import { elements, renderCard, renderLoader, renderPlayer } from "./ui.js";
 
 // Sayfanın yüklenme anı
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Formun gönderilmesini izleyen fonksiyon
-
 elements.form.addEventListener("submit", (e) => {
   // Sayfa yenilemesini engelle
   e.preventDefault();
@@ -40,4 +39,19 @@ elements.form.addEventListener("submit", (e) => {
       console.log(`Hataa: ${err}`);
       alert("Üzgünüz bir hata oluştu");
     });
+});
+
+// Şarkı listesi alanındaki tıklanma olaylarını izle
+
+elements.list.addEventListener("click", (e) => {
+  // Eğer play iconuna tıklandıysa
+  if (e.target.className === "play") {
+    // Tıklanılan play iconunun kapsayıcısı olan card elemanına eriş
+    const card = e.target.parentElement.parentElement;
+    // Cardın içerisindeki data değerlerine eriş
+    const data = card.dataset;
+
+    // Player alanını render et
+    renderPlayer(data);
+  }
 });
