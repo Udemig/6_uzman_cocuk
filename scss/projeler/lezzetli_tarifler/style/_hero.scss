@@ -1,0 +1,26 @@
+.hero {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  @include flex-center;
+  text-align: center;
+  color: white;
+  &-content {
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-family: $secondary-font;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-primary {
+      @include button;
+    }
+  }
+}

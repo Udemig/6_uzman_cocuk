@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- * Css Link -->
+    <link rel="stylesheet" href="./style/style.css" />
+    <!-- * Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- * Header -->
+    <header class="header">
+      <nav class="nav">
+        <!-- Logo -->
+        <div class="logo">Lezzetli Tarifler</div>
+        <!--  Menu -->
+        <div class="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="#">Anasayfa</a>
+          </li>
+          <li>
+            <a href="#">Tarifler</a>
+          </li>
+          <li>
+            <a href="#">Hakkımızda</a>
+          </li>
+          <li>
+            <a href="#">İletişim</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- * Hero  -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>En Lezzetli Yemek Tarifleri</h1>
+          <p>Mutfağınıza lezzet katın</p>
+          <button class="btn-primary">Tarifleri Keşfet</button>
+        </div>
+      </section>
+
+      <!-- * Recipes -->
+      <section class="featured-recipes">
+        <h2>Öne Çıkan Tarifler</h2>
+        <!-- Grid Container -->
+        <div class="recipe-grid">
+          <!-- Recipe Card -->
+          <div class="recipe-card">
+            <img src="./assets/risotto.jpg" alt="risotto-img" />
+            <div class="recipe-content">
+              <h3>Mantarlı Risotto</h3>
+              <p>İtalyan mutfağından enfes bir lezzet</p>
+              <span class="time">
+                <i class="fa-solid fa-clock"></i> 45 dk
+              </span>
+            </div>
+          </div>
+          <!-- Recipe Card -->
+          <div class="recipe-card">
+            <img src="./assets/pizza.jpg" alt="pizza-img" />
+            <div class="recipe-content">
+              <h3>Ev Yapımı Pizza</h3>
+              <p>Klasik İtalyan pizzası</p>
+              <span class="time">
+                <i class="fa-solid fa-clock"></i> 60 dk
+              </span>
+            </div>
+          </div>
+          <!-- Recipe Card -->
+          <div class="recipe-card">
+            <img src="./assets/suffle.jpg" alt="suffle-img" />
+            <div class="recipe-content">
+              <h3>Çikolatalı Sufle</h3>
+              <p>Akışkan çikolatalı lezzet</p>
+              <span class="time">
+                <i class="fa-solid fa-clock"></i> 20 dk
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- * Menu -->
+      <section class="menu">
+        <h2>Günün Menüsü</h2>
+        <div class="menu-container">
+          <!-- Menu Item -->
+          <div class="menu-item">
+            <!-- Top -->
+            <div class="menu-item-top">
+              <h3>Kahvaltı</h3>
+              <span class="price">75 ₺</span>
+            </div>
+            <!-- Description -->
+            <p>Serpme kahvaltı tabağı, sınırsız çay</p>
+          </div>
+          <!-- Menu Item -->
+          <div class="menu-item">
+            <!-- Top -->
+            <div class="menu-item-top">
+              <h3>Öğle Menüsü</h3>
+              <span class="price">120 ₺</span>
+            </div>
+            <!-- Description -->
+            <p>Günün çorbası, ana yemek, tatlı</p>
+          </div>
+          <!-- Menu Item -->
+          <div class="menu-item">
+            <!-- Top -->
+            <div class="menu-item-top">
+              <h3>Akşam Menüsü</h3>
+              <span class="price">150 ₺</span>
+            </div>
+            <!-- Description -->
+            <p>Başlangıç, ana yemek, tatlı, içecek</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- * Contact Area  -->
+      <section class="contact">
+        <div class="contact-container">
+          <!-- Info -->
+          <div class="contact-info">
+            <h2>İletişim</h2>
+            <p>Bize ulaşın, lezzet yolculuğunuz başlasın!</p>
+            <div class="info-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <p>Lezzet Sokak No:123, İstanbul</p>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-phone"></i>
+              <p>+90 212 345 67 89</p>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-envelope"></i>
+              <p>info@lezzetlitarifler.com</p>
+            </div>
+          </div>
+          <!-- Form -->
+          <div class="contact-form">
+            <input type="text" placeholder="Adınız" required />
+            <input type="email" placeholder="E-posta Adresiniz" required />
+            <textarea placeholder="Mesajınız" required></textarea>
+            <button type="submit">Gönder</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- * Footer -->
+      <footer class="footer">
+        <!-- Content -->
+        <div class="footer-content">
+          <!-- Footer Section -->
+          <div class="footer-section">
+            <h3>Lezzetli Tarifler</h3>
+            <p>En lezzetli tarifleri keşfedin, mutfağınıza lezzet katın.</p>
+            <div class="social-links">
+              <a
+                href="#
+              "
+              >
+                <i class="fa-brands fa-facebook"></i
+              ></a>
+              <a
+                href="#
+            "
+              >
+                <i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="#
+          "
+              >
+                <i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a
+                href="#
+        "
+              >
+                <i class="fa-brands fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Footer Section -->
+          <div class="footer-section">
+            <h3>Hızlı Bağlantılar</h3>
+            <ul>
+              <li><a href="#"> Anasayfa</a></li>
+              <li><a href="#">Tarifler</a></li>
+              <li><a href="#">Hakkımızda</a></li>
+              <li><a href="#">İletişim</a></li>
+            </ul>
+          </div>
+          <!-- Footer Section -->
+          <div class="footer-section">
+            <h3>Çalışma Saatleri</h3>
+            <ul class="working-hours">
+              <li>Pazartesi - Cuma: 09:00 - 22:00</li>
+              <li>Cumartesi: 10:00 - 23:00</li>
+              <li>Pazar: 10:00 - 21:00</li>
+            </ul>
+          </div>
+        </div>
+        <!-- * Footer Bottom -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 Lezzetli Tarifler. Tüm hakları saklıdır.</p>
+        </div>
+      </footer>
+    </main>
+
+    <!-- * Js Bağlantı -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

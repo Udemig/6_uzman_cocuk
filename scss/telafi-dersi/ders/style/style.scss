@@ -1,0 +1,181 @@
+@import "./header";
+@import "./main";
+@import "./footer";
+
+// Scss Faydaları
+
+// 1-) Değişkenler (Variables)
+$bg-color: red;
+$heading-font: 30px;
+$heading-padding: 10px;
+
+.wrapper {
+  background-color: $bg-color;
+  padding: $heading-padding;
+}
+
+.wrapper .title {
+  font-size: $heading-font;
+}
+
+// 2-) İç içe yazım (Nesting)
+/*
+.card {
+  background-color: #5c7285;
+  width: 250px;
+  padding: 10px;
+  margin: 10px 20px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  color: white;
+}
+ 
+.card .card-top {
+  border-bottom: 2px solid gray;
+}
+  
+.card .card-top h1 {
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+    
+.card .card-body {
+  padding: 10px;
+}
+  
+.card .card-body p {
+  font-size: 20px;
+  color: rgba(26, 24, 24, 0.681);
+}
+  
+.card .card-body p span:first-child {
+  color: white;
+  font-weight: bold;
+}
+.card .card-bottom {
+  text-align: center;
+  padding: 10px;
+  border-top: 3px solid gray;
+}
+.card .card-bottom a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.card .card-bottom a:hover {
+  color: black;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+   */
+
+.card {
+  background-color: #5c7285;
+  width: 250px;
+  padding: 10px;
+  margin: 10px 20px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  color: white;
+  // Top
+  &-top {
+    border-bottom: 2px solid gray;
+    h1 {
+      text-align: center;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+  }
+  // Body
+  &-body {
+    padding: 10px;
+    p {
+      font-size: 20px;
+      color: rgba(26, 24, 24, 0.681);
+      span:first-child {
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
+  // Bottom
+  &-bottom {
+    text-align: center;
+    padding: 10px;
+    border-top: 3px solid gray;
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      transition: all 0.4s;
+      cursor: pointer;
+      &:hover {
+        color: black;
+        padding-bottom: 10px;
+        border-bottom: 2px solid white;
+      }
+    }
+  }
+}
+// 3-) Modüler dosya yönetimi
+.container {
+  background-color: #fce7c8;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+// 4-) Miras Alma (Extend)
+.flexClass {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content-wrapper {
+  background-color: aqua;
+  margin: 10px 30px;
+  @extend .flexClass;
+  padding: 10px;
+}
+.content-wrapper-1 {
+  background-color: brown;
+  @extend .flexClass;
+  padding: 5px;
+}
+// 5-) Mixin Yapısı
+@mixin heading {
+  font-size: 45px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid gray;
+  background-color: wheat;
+  margin: 15px 20px;
+  padding: 20px;
+}
+
+@mixin laptop {
+  @media (max-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
+.example-title {
+  @include heading;
+}
+
+.example-title1 {
+  @include heading;
+  @include laptop {
+    background-color: red;
+  }
+}

@@ -1,0 +1,14 @@
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  height: 100%;
+  .left {
+    border: 1px solid gray;
+  }
+  .center {
+    border: 1px solid gray;
+  }
+  .right {
+    border: 1px solid gray;
+  }
+}

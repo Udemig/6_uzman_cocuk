@@ -1,0 +1,27 @@
+// Renkler
+$primary-color: #ff6b6b;
+$secondary-color: #4ecdc4;
+$text-color: #2d3436;
+$light-gray: #f9f9f9;
+$dark-gray: #636e72;
+
+// Yazı tipleri
+$primary-font: "Poppins", sans-serif;
+$secondary-font: "Playfair Display", serif;
+
+// Boyutlar
+$container-width: 1200px;
+$border-radius: 8px;
+
+// Geçiş süreleri
+$transition-speed: 0.3s;
+
+// Gölgeler
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+
+// Medya sorguları
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$large-desktop: 1200px;
