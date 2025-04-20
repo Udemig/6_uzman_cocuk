@@ -1,0 +1,55 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+header li {
+  list-style: none;
+}
+
+header li a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-right button {
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.header-right button:hover {
+  scale: 0.8;
+}
+
+.login {
+  background-color: green;
+}
+
+.register {
+  background-color: tomato;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    display: none;
+  }
+}
