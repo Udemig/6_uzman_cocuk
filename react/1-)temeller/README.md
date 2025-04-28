@@ -54,3 +54,39 @@
 # React Projesine Nasıl Paket İndirilir ?
 
 - `npm install [paket adı]` komutu ile projeye paketler indirebiliriz.İsenilen paketin adı bu komutta [paket adı] kısmına yazılır.
+
+# State Nedir?
+
+- Bir react bileşeni içerisinde verileri yönetmek için state kullanılır.State kullanılırken:
+
+- - İlk olarak react içerisinde state oluştururmamızı sağlayan metot import edilir.[useState()]
+
+- - useState boş bir diziye atanır. // const [stateAdı,stateGüncelleyenMetot]=useState(Başlangıç_Değeri)
+
+- - Atanan bu boş diziye iki eleman verilir.Birincisi state'in adı ikincisi ise state'i güncelleyecek fonksiyon.
+
+- - State'in başlangıç değeri ise useState() kısmındaki () içerisine yazılır.
+
+- - Devamında bileşen içerisinde state ve state'i güncelleyecek metot çağırılır.
+
+# Koşullu Renderlama:
+
+- Renderlama ekrana elaman basmak demektir.Koşullu renderlama ise bir elemanın bir koşula bağlı olarak renderlanmasıdır.Koşullu renderlanma için iki yöntem vardır:
+
+- - 1. Ternary Operatör(? :): Bir koşul sağlanıyorsa bir elemanı sağlanmıyorsa başka bir elemanı renderlamak için kullanılır.
+
+- - 2. And Operatörü (&&): Bir elemanı koşul sağlanıyorsa renderlamak için kullanılır.Sağlanmıyorsa herhangi bir render işlemi yapılmaz.
+
+# React Lifecycle (Yaşam Döngüsü):
+
+- Tıpkı insanlar gibi react componentleride doğar,gelişir ve ölür.Bir bileşenin bu aşamalarını izleyerek bileşen içerisindeki durumları yönetebiliriz.
+
+- Bir bileşenin yaşam döngüsünü izlemek için useEffect metodu kullanılır.Bu metot 3 farklı şekilde kullanılır:
+
+- - useEffect(()=>{},[]) ==> Bileşenin ekrana gelme anını izlemek için kullanılır.
+
+- - useEffect(()=>{},[bağımlılık]) ==> Bir bileşenin güncellenme anını izlemek için kullanılır.
+
+- - useEffect(()=>{return },[]) ==> Bir bileşenin ekrandan kaldırılma anını izlemek için kullanılır.
+
+- useEffect'i kullanmak için ilk olarak bu metodu react içerisinden import etmemiz gerekir.Bu metot bizden bir fonksiyon birde bağımlılık dizisi ister.
